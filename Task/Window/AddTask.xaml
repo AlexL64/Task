@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AddTask" Height="450" Width="800">
     <Grid>
-        <TextBox Name="Title" Height="64" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10,10,10,0" Background="#F00" TextAlignment="Center" FontSize="20" VerticalContentAlignment="Center"></TextBox>
+        <TextBox Name="Title" Height="64" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10,10,10,0" TextAlignment="Center" FontSize="20" VerticalContentAlignment="Center"></TextBox>
 
         <TextBox Name="Description"  Margin="10,84,10,74" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"></TextBox>
 

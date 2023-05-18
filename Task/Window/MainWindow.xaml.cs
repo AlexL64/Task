@@ -27,7 +27,6 @@ namespace Task
 
         private void AddTask(object sender, RoutedEventArgs e)
         {
-            
             View.AddTask addTask = new();
             addTask.Show();
         }

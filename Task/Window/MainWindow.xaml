@@ -8,11 +8,11 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid Height="64" HorizontalAlignment="Stretch" VerticalAlignment="Top">
-            <Button Background="#F00" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16" Cursor="Hand" Click="AddTask" Name="AddTaskButton">
-                <Image Source="../src/img/add.png" Height="32" Width="32"></Image>
+            <Button Background="#FFF" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16" Cursor="Hand" Click="AddTask" Name="AddTaskButton">
+                <Image Source="/src/img/add.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </Button>
         </Grid>
-        <Grid>
+        <Grid Margin="0,64,0,0">
 
         </Grid>
     </Grid>
