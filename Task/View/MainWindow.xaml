@@ -8,7 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid Height="64" HorizontalAlignment="Stretch" VerticalAlignment="Top">
-            <Button Background="#FFF" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16" Cursor="Hand" Click="AddTask" Name="AddTaskButton">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#8BC6EC" Offset="0.0" />
+                    <GradientStop Color="#9599E2" Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Button Background="Transparent" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16" Cursor="Hand" Click="AddTask" Name="AddTaskButton">
                 <Image Source="/src/img/add.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </Button>
         </Grid>
