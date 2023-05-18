@@ -30,25 +30,8 @@ namespace Task.View
             InitializeComponent();
         }
 
-
-        static async Task<Uri> CreateTaskAsync(Model.Task task)
-        {
-
-            HttpResponseMessage response = await client.PostAsJsonAsync("api/Tasks", task);
-            response.EnsureSuccessStatusCode();
-
-            System.Diagnostics.Debug.WriteLine(response.Headers.Location);
-            // return URI of the created resource.
-            return response.Headers.Location;
-
-        }
-
         private async void Save(object sender, RoutedEventArgs e)
         {
-            client.BaseAddress = new Uri("https://localhost:7124/");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
             // Create a new task
             Model.Task task = new()
             {
@@ -58,9 +41,16 @@ namespace Task.View
                 Status = "Pending"
             };
 
-            var url = await CreateTaskAsync(task);
-            Close();
+            client.BaseAddress = new Uri("https://localhost:7124/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+            HttpResponseMessage response = await client.PostAsJsonAsync("api/Tasks", task);
+            response.EnsureSuccessStatusCode();
+
+            System.Diagnostics.Debug.WriteLine(response.Headers.Location);
+
+            Close();
         }
     }
 }
