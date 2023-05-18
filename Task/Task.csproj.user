@@ -7,15 +7,15 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Window\AddTask.xaml.cs">
+    <Compile Update="View\AddTask.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Window\AddTask.xaml">
+    <Page Update="View\AddTask.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Window\MainWindow.xaml">
+    <Page Update="View\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

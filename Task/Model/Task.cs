@@ -8,15 +8,15 @@ namespace Task.Model
 {
     public class Task
     {
-        public string? Id { get; set; }
+        public string? id { get; set; }
 
-        public string? Title { get; set; }
+        public string? title { get; set; }
 
-        public string? Description { get; set; }
+        public string? description { get; set; }
 
-        public DateTime Created { get; set; }
+        public DateTime created { get; set; }
 
-        public string? Status { get; set; }
+        public string? status { get; set; }
     }
 
 }

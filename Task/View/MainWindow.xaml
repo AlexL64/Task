@@ -1,0 +1,49 @@
+﻿<Window x:Class="Task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid Height="64" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Button Background="#FFF" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16" Cursor="Hand" Click="AddTask" Name="AddTaskButton">
+                <Image Source="/src/img/add.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Button>
+        </Grid>
+        <ListBox DataContext="{Binding TaskListViewModel}" ItemsSource="{Binding Tasks}" Grid.Row="1" Margin="0,64,0,0">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Setter Property="Focusable" Value="False"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" Grid.Column="0" KeyboardNavigation.TabNavigation ="None">
+                            <TextBlock FontSize="18" Text="{Binding Path=title}"/>
+                            <TextBlock Text="{Binding Path=description}"/>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                                <TextBlock Text="Price : "/>
+                                <TextBlock Text="{Binding Path=created}"/>
+                                <TextBlock Text="€"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

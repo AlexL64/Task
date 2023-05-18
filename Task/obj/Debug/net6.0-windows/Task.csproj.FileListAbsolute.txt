@@ -17,7 +17,7 @@ C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\refint\Task.dll
 C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\Task.pdb
 C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\Task.genruntimeconfig.cache
 C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\ref\Task.dll
-C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\Window\AddTask.g.cs
-C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\Window\MainWindow.g.cs
-C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\Window\AddTask.baml
-C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\Window\MainWindow.baml
+C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\AddTask.g.cs
+C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\MainWindow.g.cs
+C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\AddTask.baml
+C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\MainWindow.baml

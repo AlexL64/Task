@@ -8,12 +8,12 @@ namespace Task.Model
 {
     public class Comment
     {
-        public string? Id { get; set; }
+        public string? id { get; set; }
 
-        public string? Task { get; set; }
+        public string? task { get; set; }
 
-        public string? Text { get; set; }
+        public string? text { get; set; }
 
-        public DateTime Created { get; set; }
+        public DateTime created { get; set; }
     }
 }

@@ -8,17 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="src\img\add-circle-outline-rounded.svg" />
     <None Remove="src\img\add.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="src\img\add-circle-outline-rounded.svg" />
     <Resource Include="src\img\add.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="View\" />
+    <Folder Include="Window\" />
   </ItemGroup>
 
 </Project>
