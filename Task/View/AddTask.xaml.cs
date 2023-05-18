@@ -30,7 +30,11 @@ namespace Task.View
                 status = "Pending"
             };
 
-            client.BaseAddress = new Uri("https://localhost:7124/");
+            if (client.BaseAddress == null )
+            {
+                client.BaseAddress = new Uri("https://localhost:7124/");
+            }
+            
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
