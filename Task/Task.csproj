@@ -8,15 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Window\**" />
+    <EmbeddedResource Remove="Window\**" />
+    <None Remove="Window\**" />
+    <Page Remove="Window\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="src\img\add.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="src\img\add.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Window\" />
   </ItemGroup>
 
 </Project>

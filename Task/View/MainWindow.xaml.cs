@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
 using Task.ViewModel;
+using Task.View;
 
 namespace Task
 {
@@ -22,10 +25,20 @@ namespace Task
             _taskListViewModel = new TaskListViewModel();
         }
 
+
         private void AddTask(object sender, RoutedEventArgs e)
         {
-            View.AddTask addTask = new();
+            AddTask addTask = new();
             addTask.Show();
+        }
+
+        private void OpenTask(object sender, RoutedEventArgs e)
+        {
+            Grid triggeredGrid = (Grid)sender;
+            Model.Task taskInfo = (Model.Task)triggeredGrid.DataContext;
+
+            ShowTask showTask = new ShowTask(taskInfo.id);
+            showTask.Show();
         }
     }
 }

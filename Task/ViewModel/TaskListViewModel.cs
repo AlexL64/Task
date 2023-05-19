@@ -21,8 +21,6 @@ namespace Task.ViewModel
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:7124/api/");
-                client.DefaultRequestHeaders.Add("User-Agent", "Anything");
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 var response = client.GetAsync("Tasks").Result;
                 response.EnsureSuccessStatusCode();
@@ -30,8 +28,8 @@ namespace Task.ViewModel
                 HttpContent content = response.Content;
                 string result = await content.ReadAsStringAsync();
                 System.Diagnostics.Debug.WriteLine(result);
-                List<Model.Task> tasks = JsonSerializer.Deserialize<List<Model.Task>>(result);
-                tasks.ForEach(x => { System.Diagnostics.Debug.WriteLine(x.title); });
+                List<Model.Task>? tasks = JsonSerializer.Deserialize<List<Model.Task>>(result);
+
                 return tasks;
             }
         }

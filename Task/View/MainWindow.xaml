@@ -28,7 +28,7 @@
             </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="5" Uid="{Binding Path=id}">
+                    <Grid Margin="5" UIElement.PreviewMouseDown="OpenTask">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="auto"/>

@@ -21,3 +21,5 @@ C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\AddTask.g.cs
 C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\MainWindow.g.cs
 C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\AddTask.baml
 C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\MainWindow.baml
+C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\ShowTask.g.cs
+C:\Users\Alex\source\repos\Task\Task\obj\Debug\net6.0-windows\View\ShowTask.baml
