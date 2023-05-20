@@ -52,7 +52,7 @@ namespace Task.View
             Button triggeredButton = (Button)sender;
             Model.Task taskInfo = (Model.Task)triggeredButton.DataContext;
 
-            Model.Task task = new() { id = taskInfo.id, title = Title.Text, description = Description.Text, created = taskInfo.created, status = taskInfo.status };
+            Model.Task task = new() { id = taskInfo.id, title = Title.Text, description = Description.Text, created = taskInfo.created, status = Status.Text };
             _taskViewModel.PutTask(task);
         }
 

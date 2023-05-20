@@ -12,6 +12,15 @@
                 <StackPanel DataContext="{Binding TaskViewModel.Task}">
                     <TextBox Name="Title" Margin="10,10,10,10" Height="48" VerticalAlignment="Top" TextAlignment="Center" FontSize="20" VerticalContentAlignment="Center" Text="{Binding Path=title}"/>
                     <TextBox Name="Description" Margin="10,10,10,0" Height="200" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Text="{Binding Path=description}"/>
+                    <DockPanel Margin="10,10,10,0">
+                        <TextBlock xml:space="preserve" HorizontalAlignment="Right">Status : </TextBlock>
+                        <TextBlock HorizontalAlignment="Right" Text="{Binding Path=status}"/>
+                        <ComboBox HorizontalAlignment="Right" Width="100" Name="Status">
+                            <ComboBoxItem>Pending</ComboBoxItem>
+                            <ComboBoxItem>In Progress</ComboBoxItem>
+                            <ComboBoxItem>Finished</ComboBoxItem>
+                        </ComboBox>
+                    </DockPanel>
                     <DockPanel Margin="0,10,0,10">
                         <Button Background="#fa1e22" BorderThickness="0" Height="32" Width="70" Margin="10,0,0,0" HorizontalAlignment="Left" Cursor="Hand" Click="RemoveTask">Supprimer</Button>
                         <Button Background="#2e82db" BorderThickness="0" Height="32" Width="70" Margin="0,0,10,0" HorizontalAlignment="Right" Cursor="Hand" Click="Updatetask">Enregistrer</Button>
