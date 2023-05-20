@@ -27,7 +27,6 @@ namespace Task.ViewModel
 
                 HttpContent content = response.Content;
                 string result = await content.ReadAsStringAsync();
-                System.Diagnostics.Debug.WriteLine(result);
                 List<Model.Task>? tasks = JsonSerializer.Deserialize<List<Model.Task>>(result);
 
                 return tasks;

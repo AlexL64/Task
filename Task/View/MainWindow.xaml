@@ -28,31 +28,33 @@
             </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="5" UIElement.PreviewMouseDown="OpenTask">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="0 0 0 1">
+                        <Grid Margin="5" UIElement.PreviewMouseDown="OpenTask" Cursor="Hand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
 
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                        </Grid.RowDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
 
-                        <StackPanel Grid.Row="0" Grid.Column="0" KeyboardNavigation.TabNavigation ="None">
-                            <TextBlock FontSize="18" Text="{Binding Path=title}"/>
-                            <TextBlock Text="{Binding Path=description}"/>
-                            <DockPanel Margin="0,10,0,0">
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left">
-                                    <TextBlock Text="Created : "/>
-                                    <TextBlock Text="{Binding Path=created}"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                                    <TextBlock Text="Status : "/>
-                                    <TextBlock Text="{Binding Path=status}"/>
-                                </StackPanel>
-                            </DockPanel>
-                        </StackPanel>
-                    </Grid>
+                            <StackPanel Grid.Row="0" Grid.Column="0" KeyboardNavigation.TabNavigation ="None">
+                                <TextBlock FontSize="18" Text="{Binding Path=title}"/>
+                                <TextBlock Text="{Binding Path=description}"/>
+                                <DockPanel Margin="0,10,0,0">
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                                        <TextBlock Text="Created : "/>
+                                        <TextBlock Text="{Binding Path=created}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                                        <TextBlock Text="Status : "/>
+                                        <TextBlock Text="{Binding Path=status}"/>
+                                    </StackPanel>
+                                </DockPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

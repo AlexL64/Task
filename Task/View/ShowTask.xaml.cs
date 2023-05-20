@@ -27,12 +27,19 @@ namespace Task.View
             get { return _taskViewModel; }
         }
 
+        public CommentListViewModel _commentListViewModel;
+        public CommentListViewModel CommentListViewModel
+        {
+            get { return _commentListViewModel; }
+        }
+
         public ShowTask(string id)
         {
             InitializeComponent();
 
             DataContext = this;
             _taskViewModel = new TaskViewModel(id);
+            _commentListViewModel = new CommentListViewModel(id);
         }
     }
 }
