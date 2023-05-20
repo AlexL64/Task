@@ -19,7 +19,7 @@
             <Grid Grid.Row="1">
                 <Label Height="30" VerticalAlignment="Top" Margin="10,0,0,0">Ajouter un commentaire :</Label>
                 <TextBox Name="NewComment" Height="100" VerticalAlignment="Top" Margin="10,30,10,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
-                <Button Background="#2e82db" BorderThickness="0" Height="32" Width="60" Margin="0,140,10,0" HorizontalAlignment="Right" VerticalAlignment="Top">Ajouter</Button>
+                <Button Background="#2e82db" BorderThickness="0" Height="32" Width="60" Margin="0,140,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="AddComment">Ajouter</Button>
                 <ListBox DataContext="{Binding CommentListViewModel}" ItemsSource="{Binding Comments}" Margin="0,182,0,0">
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">

@@ -41,5 +41,10 @@ namespace Task.View
             _taskViewModel = new TaskViewModel(id);
             _commentListViewModel = new CommentListViewModel(id);
         }
+
+        private void AddComment(object sender, RoutedEventArgs e)
+        {
+            _commentListViewModel.PostComment(NewComment.Text);
+        }
     }
 }
