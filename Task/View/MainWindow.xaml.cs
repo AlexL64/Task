@@ -30,7 +30,7 @@ namespace Task
         {
             AddTask addTask = new();
             addTask.Owner = this;
-            addTask.Show();
+            addTask.ShowDialog();
         }
 
         private void OpenTask(object sender, RoutedEventArgs e)
@@ -40,7 +40,7 @@ namespace Task
 
             ShowTask showTask = new ShowTask(taskInfo.id);
             showTask.Owner = this;
-            showTask.Show();
+            showTask.ShowDialog();
         }
 
         public void UpdateTaskList()
