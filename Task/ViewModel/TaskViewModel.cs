@@ -39,7 +39,7 @@ namespace Task.ViewModel
             }
         }
 
-        public async void PutTask(Model.Task task)
+        public async System.Threading.Tasks.Task PutTask(Model.Task task)
         {
             using (HttpClient client = new())
             {

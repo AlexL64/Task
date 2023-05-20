@@ -42,7 +42,7 @@ namespace Task.View
             response.EnsureSuccessStatusCode();
 
             System.Diagnostics.Debug.WriteLine(response.Headers.Location);
-
+            ((MainWindow)Owner).UpdateTaskList();
             Close();
         }
     }

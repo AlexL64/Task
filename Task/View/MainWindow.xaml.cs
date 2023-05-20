@@ -22,12 +22,14 @@ namespace Task
 
             DataContext = this;
             _taskListViewModel = new TaskListViewModel();
+
         }
 
 
         private void AddTask(object sender, RoutedEventArgs e)
         {
             AddTask addTask = new();
+            addTask.Owner = this;
             addTask.Show();
         }
 
@@ -37,10 +39,11 @@ namespace Task
             Model.Task taskInfo = (Model.Task)triggeredGrid.DataContext;
 
             ShowTask showTask = new ShowTask(taskInfo.id);
+            showTask.Owner = this;
             showTask.Show();
         }
 
-        private void UpdateTaskList(object sender, RoutedEventArgs e)
+        public void UpdateTaskList()
         {
             _taskListViewModel.UpdateTasks();
         }

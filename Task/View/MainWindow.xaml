@@ -17,9 +17,6 @@
             <Button Background="Transparent" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16" Cursor="Hand" Click="AddTask">
                 <Image Source="/src/img/add.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </Button>
-            <Button Background="Transparent" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="16" Cursor="Hand" Click="UpdateTaskList">
-                <Image Source="/src/img/add.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            </Button>
         </Grid>
         <ListBox DataContext="{Binding TaskListViewModel}" ItemsSource="{Binding Tasks}" Grid.Row="1" Margin="0,64,0,0">
             <ListBox.ItemContainerStyle>
