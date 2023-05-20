@@ -19,17 +19,17 @@ namespace Task.ViewModel
         {
             Task = taskId;
 
-            List<Comment>? result = GetComments(Task).Result;
+            List<Comment>? result = GetComments().Result;
             Comments = result;
         }
 
-        private async Task<List<Comment>?> GetComments(string taskId)
+        private async Task<List<Comment>?> GetComments()
         {
             using (HttpClient client = new())
             {
                 client.BaseAddress = new Uri("https://localhost:7124/api/");
 
-                var response = client.GetAsync("Comments/Task/" + taskId).Result;
+                var response = client.GetAsync("Comments/Task/" + Task).Result;
                 response.EnsureSuccessStatusCode();
 
                 HttpContent content = response.Content;
@@ -85,7 +85,7 @@ namespace Task.ViewModel
 
         private void UpdateComments()
         {
-            List<Comment>? result = GetComments(Task).Result;
+            List<Comment>? result = GetComments().Result;
             Comments = result;
 
             OnPropertyChanged("Comments");

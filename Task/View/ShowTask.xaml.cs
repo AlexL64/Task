@@ -46,5 +46,11 @@ namespace Task.View
 
             _commentListViewModel.DeleteComment(commentInfo.id);
         }
+
+        private void RemoveTask(object sender, RoutedEventArgs e)
+        {
+            _taskViewModel.DeleteTask();
+            Close();
+        }
     }
 }
