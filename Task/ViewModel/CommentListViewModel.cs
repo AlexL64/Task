@@ -23,6 +23,22 @@ namespace Task.ViewModel
             Comments = result;
         }
 
+        private async Task<List<Comment>?> GetComments(string taskId)
+        {
+            using (HttpClient client = new())
+            {
+                client.BaseAddress = new Uri("https://localhost:7124/api/");
+
+                var response = client.GetAsync("Comments/Task/" + taskId).Result;
+                response.EnsureSuccessStatusCode();
+
+                HttpContent content = response.Content;
+                string result = await content.ReadAsStringAsync();
+                List<Comment>? comments = JsonSerializer.Deserialize<List<Comment>>(result);
+
+                return comments;
+            }
+        }
 
         public async void PostComment(string commentText)
         {
@@ -53,21 +69,17 @@ namespace Task.ViewModel
             UpdateComments();
         }
 
-        private async Task<List<Comment>?> GetComments(string taskId)
+        public void DeleteComment(string id)
         {
             using (HttpClient client = new())
             {
                 client.BaseAddress = new Uri("https://localhost:7124/api/");
 
-                var response = client.GetAsync("Comments/Task/" + taskId).Result;
+                var response = client.DeleteAsync("Comments/" + id).Result;
                 response.EnsureSuccessStatusCode();
-
-                HttpContent content = response.Content;
-                string result = await content.ReadAsStringAsync();
-                List<Comment>? comments = JsonSerializer.Deserialize<List<Comment>>(result);
-
-                return comments;
             }
+
+            UpdateComments();
         }
 
 

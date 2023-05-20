@@ -41,10 +41,15 @@
 
                                     <StackPanel Grid.Row="0" Grid.Column="0" KeyboardNavigation.TabNavigation="None">
                                         <TextBlock TextWrapping="Wrap" Text="{Binding Path=text}"/>
-                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,10,0,0">
-                                            <TextBlock FontSize="10" Text="Created : "/>
-                                            <TextBlock FontSize="10" Text="{Binding Path=created}"/>
-                                        </StackPanel>
+                                        <DockPanel>
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,10,0,0">
+                                                <TextBlock FontSize="10" Text="Created : "/>
+                                                <TextBlock FontSize="10" Text="{Binding Path=created}"/>
+                                            </StackPanel>
+                                            <Button BorderThickness="0" Cursor="Hand" HorizontalAlignment="Right" Background="Transparent" Height="32" Width="32" Click="RemoveComment">
+                                                <Image Source="/src/img/trash.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                                            </Button>
+                                        </DockPanel>
                                     </StackPanel>
                                 </Grid>
                             </Border>

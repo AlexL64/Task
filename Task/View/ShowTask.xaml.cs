@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Task.ViewModel;
+using Task.Model;
 
 namespace Task.View
 {
@@ -47,6 +37,14 @@ namespace Task.View
             _commentListViewModel.PostComment(NewComment.Text);
 
             NewComment.Text = null;
+        }
+
+        private void RemoveComment(object sender, RoutedEventArgs e)
+        {
+            Button triggeredButton = (Button)sender;
+            Comment commentInfo = (Comment)triggeredButton.DataContext;
+
+            _commentListViewModel.DeleteComment(commentInfo.id);
         }
     }
 }

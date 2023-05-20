@@ -16,10 +16,12 @@
 
   <ItemGroup>
     <None Remove="src\img\add.png" />
+    <None Remove="src\img\trash.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="src\img\add.png" />
+    <Resource Include="src\img\trash.png" />
   </ItemGroup>
 
 </Project>
