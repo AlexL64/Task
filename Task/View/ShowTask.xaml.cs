@@ -47,6 +47,15 @@ namespace Task.View
             _commentListViewModel.DeleteComment(commentInfo.id);
         }
 
+        private void Updatetask(object sender, RoutedEventArgs e)
+        {
+            Button triggeredButton = (Button)sender;
+            Model.Task taskInfo = (Model.Task)triggeredButton.DataContext;
+
+            Model.Task task = new() { id = taskInfo.id, title = Title.Text, description = Description.Text, created = taskInfo.created, status = taskInfo.status };
+            _taskViewModel.PutTask(task);
+        }
+
         private void RemoveTask(object sender, RoutedEventArgs e)
         {
             _taskViewModel.DeleteTask();

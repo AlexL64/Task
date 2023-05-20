@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.ComponentModel;
 
 namespace Task.ViewModel
 {
-    public class TaskListViewModel
+    public class TaskListViewModel : INotifyPropertyChanged
     {
         public List<Model.Task>? Tasks { get; set; }
         public TaskListViewModel()
@@ -31,6 +32,25 @@ namespace Task.ViewModel
                 return tasks;
             }
         }
+
+        public void UpdateTasks()
+        {
+            List<Model.Task>? result = GetTasks().Result;
+            Tasks = result;
+
+            OnPropertyChanged("Tasks");
+        }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler? handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
 
     }
 }

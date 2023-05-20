@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Task.Model;
@@ -36,6 +36,17 @@ namespace Task.ViewModel
                 Model.Task? task = JsonSerializer.Deserialize<Model.Task>(result);
 
                 return task;
+            }
+        }
+
+        public async void PutTask(Model.Task task)
+        {
+            using (HttpClient client = new())
+            {
+                client.BaseAddress = new Uri("https://localhost:7124/api/");
+
+                HttpResponseMessage response = await client.PutAsJsonAsync($"Tasks/{taskId}", task);
+                response.EnsureSuccessStatusCode();
             }
         }
 

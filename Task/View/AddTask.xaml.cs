@@ -32,13 +32,13 @@ namespace Task.View
 
             if (client.BaseAddress == null )
             {
-                client.BaseAddress = new Uri("https://localhost:7124/");
+                client.BaseAddress = new Uri("https://localhost:7124/api/");
             }
             
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = await client.PostAsJsonAsync("api/Tasks", task);
+            HttpResponseMessage response = await client.PostAsJsonAsync("Tasks", task);
             response.EnsureSuccessStatusCode();
 
             System.Diagnostics.Debug.WriteLine(response.Headers.Location);

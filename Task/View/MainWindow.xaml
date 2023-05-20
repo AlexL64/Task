@@ -14,7 +14,10 @@
                     <GradientStop Color="#9599E2" Offset="1.0" />
                 </LinearGradientBrush>
             </Grid.Background>
-            <Button Background="Transparent" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16" Cursor="Hand" Click="AddTask" Name="AddTaskButton">
+            <Button Background="Transparent" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="16" Cursor="Hand" Click="AddTask">
+                <Image Source="/src/img/add.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Button>
+            <Button Background="Transparent" BorderThickness="0" Height="32" Width="32" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="16" Cursor="Hand" Click="UpdateTaskList">
                 <Image Source="/src/img/add.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             </Button>
         </Grid>

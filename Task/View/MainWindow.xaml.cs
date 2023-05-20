@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using Task.ViewModel;
 using Task.View;
@@ -39,6 +38,11 @@ namespace Task
 
             ShowTask showTask = new ShowTask(taskInfo.id);
             showTask.Show();
+        }
+
+        private void UpdateTaskList(object sender, RoutedEventArgs e)
+        {
+            _taskListViewModel.UpdateTasks();
         }
     }
 }
