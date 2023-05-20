@@ -45,6 +45,8 @@ namespace Task.View
         private void AddComment(object sender, RoutedEventArgs e)
         {
             _commentListViewModel.PostComment(NewComment.Text);
+
+            NewComment.Text = null;
         }
     }
 }
