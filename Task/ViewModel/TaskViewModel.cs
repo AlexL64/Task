@@ -56,7 +56,10 @@ namespace Task.ViewModel
             {
                 client.BaseAddress = new Uri("https://localhost:7124/api/");
 
+                var responseComment = client.DeleteAsync("Comments/Task/" + taskId).Result;
                 var response = client.DeleteAsync("Tasks/" + taskId).Result;
+
+                responseComment.EnsureSuccessStatusCode();
                 response.EnsureSuccessStatusCode();
             }
         }

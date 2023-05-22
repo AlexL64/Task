@@ -75,8 +75,9 @@ namespace Task.ViewModel
             {
                 client.BaseAddress = new Uri("https://localhost:7124/api/");
 
-                var response = client.DeleteAsync("Comments/" + id).Result;
-                response.EnsureSuccessStatusCode();
+                var responsetask = client.DeleteAsync("Comments/" + id).Result;
+
+                responsetask.EnsureSuccessStatusCode();
             }
 
             UpdateComments();
